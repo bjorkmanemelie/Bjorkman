@@ -1,0 +1,7 @@
+.navbar {
+  position: fixed;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #f5f0eb;
+  color: #1a1a1a;
+  display: flexbox;
+}
