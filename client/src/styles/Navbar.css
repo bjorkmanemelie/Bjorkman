@@ -1,7 +1,21 @@
-.navbar {
+.Navbar {
   position: fixed;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: #f5f0eb;
+  background-color: var(--color-accent);
   color: #1a1a1a;
-  display: flexbox;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar-title {
+  color: var(--color-text-muted);
+}
+
+.navbar-links {
+  display: flex;
+  color: var(--color-text-muted);
+  gap: 0.5rem;
+  list-style: none;
 }
