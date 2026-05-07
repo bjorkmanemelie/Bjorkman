@@ -3,7 +3,6 @@
   flex-direction: column;
   background-color: var(--color-bg-secondary);
   color: #1a1a1a;
-  justify-content: space-between;
   list-style: none;
   padding-top: 80px;
   padding: 80px 40px 40px 40px;
