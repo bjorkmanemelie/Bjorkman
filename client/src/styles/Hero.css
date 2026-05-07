@@ -1,7 +1,7 @@
 #home {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   color: #1a1a1a;
   list-style: none;
   padding-top: 80px;
@@ -16,6 +16,17 @@
 
 .hero-btn {
   background-color: var(--color-accent);
-  color: #1a1a1a;
+  color: white;
   padding: 10px;
+  border-radius: 50px;
+}
+
+.hero-h1 {
+  font-size: 1rem;
+}
+
+.hero-h2 {
+  font-size: 11rem;
+  font-weight: bold;
+  color: var(--color-text);
 }

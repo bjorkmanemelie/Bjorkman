@@ -1,7 +1,6 @@
 .Navbar {
   position: fixed;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
   color: #1a1a1a;
   display: flex;
   width: 100%;
@@ -16,6 +15,6 @@
 .navbar-links {
   display: flex;
   color: var(--color-text-muted);
-  gap: 0.5rem;
+  gap: 2rem;
   list-style: none;
 }

@@ -1,9 +1,10 @@
 :root {
-  --color-bg: #f5f0eb;
-  --color-bg-secondary: #ede8e3;
+  --color-bg: #171515;
+  --color-bg-secondary: #1f1f1f;
   --color-accent: #ff5500;
-  --color-text: #1a1a1a;
-  --color-text-muted: #666666;
+  --color-text: #e6e6e6;
+  --color-text-muted: #9d9c9c;
   --border-radius: 12px;
   --max-width: 1200px;
+  --font-family: "Inter", sans-serif;
 }
