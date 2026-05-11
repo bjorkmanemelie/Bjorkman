@@ -25,3 +25,20 @@
 .project-description {
   color: var(--color-text-muted);
 }
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-accent);
+  
+}

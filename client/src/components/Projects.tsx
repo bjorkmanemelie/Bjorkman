@@ -12,7 +12,15 @@ const Projects = () => {
       {projects.map((project) => (
         <div key={project._id} className="project-card">
           <h3 className="project-title">{project.title}</h3>
+
           <p className="project-description">{project.description}</p>
+          <div className="project-technologies">
+            {project.technologies.map((tech) => (
+              <span key={tech} className="tech-tag">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
     </section>
