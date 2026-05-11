@@ -5,7 +5,7 @@ const Hero = () => {
     <section id="home">
       <h1 className="hero-h1">Fullstack developer</h1>
       <h2 className="hero-h2">Björkman</h2>
-      <p>
+      <p className="hero-p">
         Just nu halvvägs genom Fullstack utbildning hos Chas Academy med drivet
         att lära mig mer.
       </p>

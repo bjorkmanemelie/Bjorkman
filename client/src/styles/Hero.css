@@ -23,10 +23,17 @@
 
 .hero-h1 {
   font-size: 1rem;
+  color: var(--color-text);
 }
 
 .hero-h2 {
   font-size: 11rem;
   font-weight: bold;
   color: var(--color-text);
+  opacity: 3;
+}
+
+.hero-p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
 }
