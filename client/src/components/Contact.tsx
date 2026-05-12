@@ -1,5 +1,6 @@
 import "../styles/Contacts.css";
 import { useState } from "react";
+import axios from "axios";
 
 type ContactProps = {
   isOpen: boolean;
@@ -14,9 +15,23 @@ const Contact = ({ isOpen, onClose }: ContactProps) => {
   });
   if (!isOpen) return null;
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:3001/api/contact", formData);
+      onClose();
+    } catch (error) {
+      console.log("Något gick fel", error);
+    }
+  };
+
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <form className="form-contact" onClick={(e) => e.stopPropagation()}>
+      <form
+        className="form-contact"
+        onSubmit={handleSubmit}
+        onClick={(e) => e.stopPropagation()}
+      >
         <input
           type="text"
           placeholder="Enter your name"
@@ -37,7 +52,9 @@ const Contact = ({ isOpen, onClose }: ContactProps) => {
           }
         />
         <button className="input-btn">Skicka</button>
-        <button type="button" className="close-btn" onClick={onClose}>Stäng</button>
+        <button type="button" className="close-btn" onClick={onClose}>
+          Stäng
+        </button>
       </form>
     </div>
   );
