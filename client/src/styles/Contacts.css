@@ -1,0 +1,71 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.form-contact {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+
+.form-contact input,
+.form-contact textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-contact input:focus,
+.form-contact textarea:focus {
+  border-color: #888;
+}
+
+.input-btn {
+  padding: 0.75rem;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-btn:hover {
+  background: #ddd;
+}
+
+.close-btn {
+  padding: 0.5rem;
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #fff;
+  border-color: #888;
+}
