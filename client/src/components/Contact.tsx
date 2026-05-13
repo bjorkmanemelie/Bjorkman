@@ -19,6 +19,12 @@ const Contact = ({ isOpen, onClose }: ContactProps) => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:3001/api/contact", formData);
+
+      await axios.post("https://api.web3forms.com/submit", {
+        access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+        ...formData,
+      });
+
       onClose();
     } catch (error) {
       console.log("Något gick fel", error);
