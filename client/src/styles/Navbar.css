@@ -1,11 +1,11 @@
 .Navbar {
   position: fixed;
-  background-color: var(--color-bg-secondary);
-  color: #1a1a1a;
+  background-color: var(--color-bg);
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 1rem;
+  border-bottom: 1px solid var(--color-bg-secondary);
 }
 
 .navbar-title {
@@ -16,6 +16,7 @@
   display: flex;
   list-style: none;
   gap: 2rem;
+  padding-left: 50%;
 }
 
 .navbar-links a {
@@ -29,9 +30,11 @@
 
 .contact-button {
   background-color: var(--color-accent);
-  color: white;
-  padding: 10px 20px;
+  color: var(--color-bg-secondary);
+  padding: 20px 30px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
 }
