@@ -1,39 +1,31 @@
 #home {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg);
-  color: #1a1a1a;
-  list-style: none;
-  padding-top: 80px;
-  padding: 80px 40px 40px 40px;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  align-items: flex-start;
-}
-
-.hero-h1 {
-  color: #666666;
-}
-
-.hero-btn {
-  background-color: var(--color-accent);
-  color: white;
-  padding: 10px;
-  border-radius: 50px;
-}
-
-.hero-h1 {
-  font-size: 1rem;
-  color: var(--color-text);
+  padding-top: 80px;
+  text-align: center;
+  gap: 2rem;
 }
 
 .hero-h2 {
-  font-size: 20rem;
+  font-size: 15rem;
   font-weight: bold;
   color: var(--color-text);
-  opacity: 3;
+  line-height: 1;
 }
 
 .hero-p {
   font-size: 1rem;
   color: var(--color-text-muted);
+  max-width: 400px;
+}
+
+.hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }

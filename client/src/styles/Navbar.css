@@ -14,7 +14,24 @@
 
 .navbar-links {
   display: flex;
-  color: var(--color-text-muted);
-  gap: 2rem;
   list-style: none;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  color: var(--color-text);
+}
+
+.contact-button {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
 }

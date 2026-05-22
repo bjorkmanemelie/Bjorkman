@@ -8,7 +8,7 @@ function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   return (
     <div>
-      <Navbar />
+      <Navbar onContactClick={() => setIsContactOpen(true)} />
       <Hero onContactClick={() => setIsContactOpen(true)} />
       <Projects />
       <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
