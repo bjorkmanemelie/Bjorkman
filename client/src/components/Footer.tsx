@@ -5,14 +5,24 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-inner">
         <p className="footer-copy">© 2026 Emelie Björkman</p>
-        <a
-          href="https://github.com/bjorkmanemelie"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footer-link"
-        >
-          GitHub
-        </a>
+        <div className="footer-links">
+          <a
+            href="https://www.linkedin.com/in/bjorkmanemelie/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/bjorkmanemelie"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </footer>
   );
