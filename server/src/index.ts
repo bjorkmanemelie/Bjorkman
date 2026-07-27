@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import projectRoutes from "./routes/projectRoutes";
+import contactRoutes from "./routes/contactRoutes";
 
 dotenv.config();
 
@@ -12,9 +14,11 @@ const PORT = process.env.PORT || 5000;
 
 // Tillåter frontend  att prata med backend
 app.use(cors());
-
 // Låter servern förstå JSON som skickas i requests
 app.use(express.json());
+
+app.use("/api/projects", projectRoutes);
+app.use("/api/contact", contactRoutes);
 
 mongoose
   .connect(process.env.MONGODB_URI!)

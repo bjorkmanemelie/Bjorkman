@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oxanium:wght@300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 @import "./styles/variables.css";
 
 * {
@@ -6,10 +7,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: "Inter", sans-serif;
+  font-family: "Rajdhani", sans-serif;
   line-height: 1.6;
 }
 
