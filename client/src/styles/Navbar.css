@@ -4,9 +4,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(23, 21, 21, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(23, 21, 21, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,20 +45,21 @@
 }
 
 .contact-button {
-  background-color: var(--color-accent);
+  background-color: transparent;
   color: #fff;
   padding: 0.55rem 1.25rem;
   border-radius: 50px;
-  border: none;
+  border: 2px solid var(--color-accent);
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
   font-family: inherit;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .contact-button:hover {
-  opacity: 0.85;
+  background-color: var(--color-accent);
+  color: #fff;
 }
 
 @media (max-width: 768px) {

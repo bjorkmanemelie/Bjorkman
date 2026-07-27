@@ -15,7 +15,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
         <li><a href="#skills">Skills</a></li>
       </ul>
       <button className="contact-button" onClick={onContactClick}>
-        Let's talk
+        Contact me
       </button>
     </nav>
   );
