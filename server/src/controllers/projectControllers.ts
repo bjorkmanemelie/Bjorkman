@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import Project from "../models/Projects.js";
+import Project from "../models/Projects";
 
 export const getProjects = async (_req: Request, res: Response) => {
   // hämta alla projekt och skicka tillbaka
