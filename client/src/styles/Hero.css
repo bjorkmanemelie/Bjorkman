@@ -1,11 +1,9 @@
 #home {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
-  padding: 120px 4rem 4rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
+  padding: 120px 8rem 4rem;
   gap: 4rem;
 }
 
@@ -25,11 +23,11 @@
 }
 
 .hero-name {
-  font-size: 5rem;
+  font-size: 8rem;
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.0;
   font-family: var(--font-hero);
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   background: linear-gradient(
     125deg,
     #ffffff 0%,
@@ -118,8 +116,8 @@
 }
 
 .hero-image {
-  width: 200px;
-  height: 200px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -137,7 +135,7 @@
   }
 
   .hero-name {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .hero-description {
