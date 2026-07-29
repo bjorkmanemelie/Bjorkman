@@ -118,7 +118,7 @@
 .hero-image {
   width: 380px;
   height: 380px;
-  border-radius: 50%;
+  border-radius: 16px;
   object-fit: cover;
   object-position: top;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -147,7 +147,8 @@
   }
 
   .hero-image {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
   }
 }

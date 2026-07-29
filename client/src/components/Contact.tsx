@@ -17,18 +17,26 @@ const Contact = ({ isOpen, onClose }: ContactProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:3001/api/contact", formData);
 
+    try {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, formData);
+    } catch (error) {
+      console.log("Kunde inte spara meddelandet i databasen", error);
+    }
+
+    try {
       await axios.post("https://api.web3forms.com/submit", {
         access_key: import.meta.env.VITE_WEB3FORMS_KEY,
         ...formData,
       });
-
-      onClose();
     } catch (error) {
-      console.log("Något gick fel", error);
+      // Web3Forms svarar ibland utan korrekta CORS-headers, vilket gör att
+      // webbläsaren blockerar läsning av svaret även när mailet skickats
+      // korrekt. Vi loggar felet men låter inte det stoppa flödet.
+      console.log("Web3Forms svarade utan läsbart resultat (kan ändå ha lyckats)", error);
     }
+
+    onClose();
   };
 
   return (
