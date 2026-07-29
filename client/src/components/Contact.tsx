@@ -8,35 +8,26 @@ type ContactProps = {
 };
 
 const Contact = ({ isOpen, onClose }: ContactProps) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("sending");
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, formData);
-    } catch (error) {
-      console.log("Kunde inte spara meddelandet i databasen", error);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, formData);
+      if (res.data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
     }
-
-    try {
-      await axios.post("https://api.web3forms.com/submit", {
-        access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-        ...formData,
-      });
-    } catch (error) {
-      // Web3Forms svarar ibland utan korrekta CORS-headers, vilket gör att
-      // webbläsaren blockerar läsning av svaret även när mailet skickats
-      // korrekt. Vi loggar felet men låter inte det stoppa flödet.
-      console.log("Web3Forms svarade utan läsbart resultat (kan ändå ha lyckats)", error);
-    }
-
-    onClose();
   };
 
   return (
@@ -46,29 +37,40 @@ const Contact = ({ isOpen, onClose }: ContactProps) => {
         onSubmit={handleSubmit}
         onClick={(e) => e.stopPropagation()}
       >
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-        <textarea
-          placeholder="Enter your message"
-          value={formData.message}
-          onChange={(e) =>
-            setFormData({ ...formData, message: e.target.value })
-          }
-        />
-        <button className="input-btn">Skicka</button>
-        <button type="button" className="close-btn" onClick={onClose}>
-          Stäng
-        </button>
+        {status === "success" ? (
+          <div className="form-success">
+            <p>Message sent!</p>
+            <button type="button" className="close-btn" onClick={onClose}>Close</button>
+          </div>
+        ) : (
+          <>
+            <input
+              type="text"
+              placeholder="Your name"
+              value={formData.name}
+              required
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            />
+            <input
+              type="email"
+              placeholder="Your email"
+              value={formData.email}
+              required
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+            <textarea
+              placeholder="Your message"
+              value={formData.message}
+              required
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            />
+            {status === "error" && <p className="form-error">Something went wrong. Try again.</p>}
+            <button className="input-btn" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : "Send"}
+            </button>
+            <button type="button" className="close-btn" onClick={onClose}>Close</button>
+          </>
+        )}
       </form>
     </div>
   );
