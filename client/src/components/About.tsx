@@ -4,17 +4,15 @@ const About = () => {
   return (
     <section id="about">
       <div className="about-inner">
-        <span className="about-eyebrow">About me</span>
-        <h2 className="about-heading">
-          I'm a problem solver — in code and in life.
-        </h2>
+        <span className="about-eyebrow">About</span>
+        <h2 className="about-heading">Fullstack developer with an eye for detail.</h2>
         <p className="about-text">
-          I'm a fullstack developer who loves building things that actually
-          work and feel good to use. I get the same kick out of debugging a
-          tricky problem as I do perfecting a recipe in the kitchen. Outside
-          of coding, I grew up playing football, I'm always planning my next
-          trip, and I genuinely believe that curiosity — whether it's about
-          code, food, or a new city — is the best skill you can have.
+          I'm a fullstack developer focused on building web applications that
+          are reliable, well-structured, and easy to use. I enjoy the process
+          of breaking down complex problems and turning them into clean,
+          maintainable solutions — from backend architecture to the finer
+          details of the user interface. I'm continuously expanding my skills
+          and looking for opportunities to contribute to meaningful projects.
         </p>
       </div>
     </section>
