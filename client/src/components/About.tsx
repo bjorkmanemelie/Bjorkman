@@ -5,9 +5,9 @@ const About = () => {
     <section id="about">
       <div className="about-inner">
         <span className="about-eyebrow">About</span>
-        <h2 className="about-heading">Fullstack developer with an eye for detail.</h2>
+        <h2 className="about-heading">Fullstack developer student.</h2>
         <p className="about-text">
-          I'm a fullstack developer focused on building applications that
+          I'm a fullstack developer that is focused on building applications that
           are reliable, well-structured, and easy to use. I enjoy turning
           ideas into clean, maintainable solutions — from backend
           architecture to the finer details of the user interface. I'm

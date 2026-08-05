@@ -11,12 +11,18 @@ const Projects = () => {
     <section id="projects">
       <div className="projects-inner">
         <div className="projects-header">
-          <span className="projects-eyebrow">Work</span>
+          <span className="projects-eyebrow">My Work</span>
           <h2 className="projects-heading">Projects</h2>
         </div>
         <div className="projects-grid">
           {projects.map((project) => (
-            <div key={project._id} className="project-card">
+            <div
+              key={project._id}
+              className={`project-card${project.client ? " project-card--client" : ""}`}
+            >
+              {project.client && (
+                <span className="project-badge">Client Project</span>
+              )}
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-tags">
@@ -25,14 +31,16 @@ const Projects = () => {
                 ))}
               </div>
               <div className="project-links">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  GitHub →
-                </a>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    GitHub →
+                  </a>
+                )}
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
