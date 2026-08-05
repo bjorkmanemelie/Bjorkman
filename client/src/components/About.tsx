@@ -7,7 +7,7 @@ const About = () => {
         <span className="about-eyebrow">About</span>
         <h2 className="about-heading">Fullstack developer with an eye for detail.</h2>
         <p className="about-text">
-          I'm a fullstack developer focused on building web applications that
+          I'm a fullstack developer focused on building applications that
           are reliable, well-structured, and easy to use. I enjoy the process
           of breaking down complex problems and turning them into clean,
           maintainable solutions — from backend architecture to the finer
